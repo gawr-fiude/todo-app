@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Cousine";
+  src: url("/Cousine.ttf") format("truetype");
+}
+
+body {
+  font-family: "Cousine", ui-monospace, "Cascadia Code", "Source Code Pro",
+    Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  font-weight: normal;
+  font-size: 18px;
+  color: var(--ctp-mocha-text);
+  background: var(--ctp-mocha-base);
+}
