@@ -15,19 +15,19 @@ import { defineAsyncComponent } from "vue";
 
 const socialLinks = [
   {
-    url: "/",
+    url: "https://github.com/gawr-fiude/todo-app",
     icon: defineAsyncComponent(
       () => import("@/components/icons/BranchIcon.vue"),
     ),
   },
   {
-    url: "/journal",
+    url: "https://github.com/gawr-fiude",
     icon: defineAsyncComponent(
       () => import("@/components/icons/GithubIcon.vue"),
     ),
   },
   {
-    url: "/config",
+    url: "https://www.linkedin.com/in/eduardo-eiji-goto-926702217/",
     icon: defineAsyncComponent(
       () => import("@/components/icons/LinkedinIcon.vue"),
     ),
