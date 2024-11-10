@@ -10,4 +10,16 @@ body {
   font-size: 18px;
   color: var(--ctp-mocha-text);
   background: var(--ctp-mocha-base);
+
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+}
+
+#app {
+  width: min(120ch, 100% - 2rem);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem 1rem;
 }
