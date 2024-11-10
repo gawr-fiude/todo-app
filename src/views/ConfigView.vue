@@ -1,3 +1,3 @@
 <template>
-  <h1>About View</h1>
+  <h1>Config View</h1>
 </template>

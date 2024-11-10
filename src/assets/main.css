@@ -3,13 +3,22 @@
   src: url("/Cousine.ttf") format("truetype");
 }
 
+:root {
+  --spacing-small: 1rem;
+  --spacing-default: 1.5rem;
+
+  --color-base: var(--ctp-mocha-base);
+  --color-text: var(--ctp-mocha-text);
+  --color-primary: var(--ctp-mocha-green);
+}
+
 body {
   font-family: "Cousine", ui-monospace, "Cascadia Code", "Source Code Pro",
     Menlo, Consolas, "DejaVu Sans Mono", monospace;
   font-weight: normal;
   font-size: 18px;
-  color: var(--ctp-mocha-text);
-  background: var(--ctp-mocha-base);
+  color: var(--color-text);
+  background: var(--color-base);
 
   display: grid;
   place-items: center;
@@ -21,5 +30,45 @@ body {
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem 1rem;
+  gap: var(--spacing-default) var(--spacing-small);
+}
+
+.content__padding--vertical {
+  padding-top: var(--spacing-default);
+  padding-bottom: var(--spacing-default);
+}
+
+.content__padding--horizontal {
+  padding-right: var(--spacing-default);
+  padding-left: var(--spacing-default);
+}
+
+.content__wrapper {
+  position: relative;
+  border-radius: 0.5rem;
+
+  outline: 1px solid;
+}
+
+.content__wrapper:hover {
+  outline: 1px solid var(--color-primary);
+}
+
+.content__wrapper:focus-within {
+  outline: 2px solid var(--color-primary);
+}
+
+.content__wrapper > .content__legend {
+  position: absolute;
+  margin-top: -0.7em;
+  margin-left: 1rem;
+  top: 0;
+  left: 0;
+  background: var(--color-base);
+  width: fit-content;
+}
+
+.content__wrapper:focus-within > .content__legend {
+  color: var(--color-primary);
+  font-weight: 600;
 }
