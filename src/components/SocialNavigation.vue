@@ -2,7 +2,12 @@
   <nav class="socials">
     <ul>
       <li v-for="link in socialLinks" :key="link.url">
-        <a :href="link.url" target="_blank" rel="noopener noreferrer">
+        <a
+          :href="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="focusable"
+        >
           <component :is="link.icon"></component>
         </a>
       </li>
@@ -48,12 +53,5 @@ li > a {
   width: 2.5rem;
   aspect-ratio: 1;
   padding: 0.5rem;
-}
-
-li > a:focus,
-li > a:hover {
-  background: var(--color-primary);
-  color: var(--color-base);
-  outline: none;
 }
 </style>

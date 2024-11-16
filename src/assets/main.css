@@ -72,3 +72,10 @@ body {
   color: var(--color-primary);
   font-weight: 600;
 }
+
+.focusable:focus,
+.focusable:hover {
+  background: var(--color-primary);
+  color: var(--color-base);
+  outline: none;
+}

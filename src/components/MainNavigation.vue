@@ -6,7 +6,12 @@
 
     <ul>
       <li>
-        <RouterLink v-for="link in navLinks" :key="link.url" :to="link.url">
+        <RouterLink
+          v-for="link in navLinks"
+          :key="link.url"
+          :to="link.url"
+          class="focusable"
+        >
           {{ link.label }}
         </RouterLink>
       </li>
@@ -37,12 +42,5 @@ const navLinks = [
 li > a {
   display: block;
   padding: 0.2rem;
-}
-
-li > a:focus,
-li > a:hover {
-  background: var(--color-primary);
-  color: var(--color-base);
-  outline: none;
 }
 </style>
