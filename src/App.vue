@@ -9,20 +9,16 @@ import CheatSheet from "@/components/CheatSheet.vue";
 <template>
   <MainNavigation />
 
-  <main
-    class="content__wrapper content__padding--vertical content__padding--horizontal"
-  >
-    <h2 class="content__legend">
+  <main class="wrapper padding--vertical padding--horizontal">
+    <h2 class="legend">
       {{ new Date().toISOString().split("T")[0] }}
     </h2>
 
     <RouterView />
   </main>
 
-  <article
-    class="content__wrapper content__padding--vertical content__padding--horizontal"
-  >
-    <h2 class="content__legend">Day Summary</h2>
+  <article class="wrapper padding--vertical padding--horizontal">
+    <h2 class="legend">Day Summary</h2>
 
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem

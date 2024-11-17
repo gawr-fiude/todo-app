@@ -26,7 +26,7 @@
     </li>
   </ul>
 
-  <dialog ref="dialog-new-todo">
+  <dialog ref="dialog-new-todo" class="padding--vertical padding--horizontal">
     <form @submit.prevent="addTodo">
       <fieldset>
         <legend>Label</legend>

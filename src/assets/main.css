@@ -25,6 +25,15 @@ body {
   min-height: 100dvh;
 }
 
+dialog {
+  color: var(--color-text);
+  background: var(--color-base);
+}
+
+dialog::backdrop {
+  background: transparent;
+}
+
 #app {
   width: min(120ch, 100% - 2rem);
 
@@ -33,32 +42,32 @@ body {
   gap: var(--spacing-default) var(--spacing-small);
 }
 
-.content__padding--vertical {
+.padding--vertical {
   padding-top: var(--spacing-default);
   padding-bottom: var(--spacing-default);
 }
 
-.content__padding--horizontal {
+.padding--horizontal {
   padding-right: var(--spacing-default);
   padding-left: var(--spacing-default);
 }
 
-.content__wrapper {
+.wrapper {
   position: relative;
   border-radius: 0.5rem;
 
   outline: 1px solid;
 }
 
-.content__wrapper:hover {
+.wrapper:hover {
   outline: 1px solid var(--color-primary);
 }
 
-.content__wrapper:focus-within {
+.wrapper:focus-within {
   outline: 2px solid var(--color-primary);
 }
 
-.content__wrapper > .content__legend {
+.wrapper > .legend {
   position: absolute;
   margin-top: -0.7em;
   margin-left: 1rem;
@@ -68,7 +77,7 @@ body {
   width: fit-content;
 }
 
-.content__wrapper:focus-within > .content__legend {
+.wrapper:focus-within > .legend {
   color: var(--color-primary);
   font-weight: 600;
 }

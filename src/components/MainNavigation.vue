@@ -1,8 +1,6 @@
 <template>
-  <nav
-    class="content__wrapper content__padding--vertical content__padding--horizontal"
-  >
-    <h2 class="content__legend">Navigation</h2>
+  <nav class="wrapper padding--vertical padding--horizontal">
+    <h2 class="legend">Navigation</h2>
 
     <ul>
       <li>
