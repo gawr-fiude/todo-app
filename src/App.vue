@@ -18,7 +18,7 @@ import CheatSheet from "@/components/CheatSheet.vue";
   </main>
 
   <article class="wrapper padding--vertical padding--horizontal">
-    <h2 class="legend">Day Summary</h2>
+    <h2 class="legend">Summary</h2>
 
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
