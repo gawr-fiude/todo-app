@@ -25,15 +25,6 @@ body {
   min-height: 100dvh;
 }
 
-dialog {
-  color: var(--color-text);
-  background: var(--color-base);
-}
-
-dialog::backdrop {
-  background: transparent;
-}
-
 #app {
   width: min(120ch, 100% - 2rem);
 
