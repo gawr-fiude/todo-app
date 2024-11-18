@@ -4,12 +4,7 @@
 
     <ul>
       <li>
-        <RouterLink
-          v-for="link in navLinks"
-          :key="link.url"
-          :to="link.url"
-          class="focusable"
-        >
+        <RouterLink v-for="link in navLinks" :key="link.url" :to="link.url">
           {{ link.label }}
         </RouterLink>
       </li>

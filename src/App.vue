@@ -3,7 +3,6 @@ import { RouterView } from "vue-router";
 
 import MainNavigation from "@/components/MainNavigation.vue";
 import SocialNavigation from "@/components/SocialNavigation.vue";
-import CheatSheet from "@/components/CheatSheet.vue";
 </script>
 
 <template>
@@ -29,17 +28,11 @@ import CheatSheet from "@/components/CheatSheet.vue";
   </article>
 
   <SocialNavigation />
-
-  <CheatSheet />
 </template>
 
 <style scoped>
 main {
   grid-column: span 3;
   grid-row: span 3;
-}
-
-footer {
-  grid-column: span 4;
 }
 </style>

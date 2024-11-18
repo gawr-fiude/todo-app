@@ -2,12 +2,7 @@
   <nav class="socials">
     <ul>
       <li v-for="link in socialLinks" :key="link.url">
-        <a
-          :href="link.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="focusable"
-        >
+        <a :href="link.url" target="_blank" rel="noopener noreferrer">
           <component :is="link.icon"></component>
         </a>
       </li>

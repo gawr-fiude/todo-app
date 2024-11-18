@@ -6,7 +6,7 @@
           showAddTodoDialog = true;
         }
       "
-      class="focusable"
+      variant="primary"
     >
       Add TODO
     </button>
@@ -16,7 +16,7 @@
           showRemoveAllDialog = true;
         }
       "
-      class="focusable"
+      variant="primary"
     >
       Remove All
     </button>
@@ -47,7 +47,7 @@
         <input v-model="newTodo.description" type="text" />
       </fieldset>
 
-      <button type="submit" class="focusable">Add</button>
+      <button type="submit" variant="primary">Add</button>
     </form>
   </DialogPopUp>
 
@@ -62,7 +62,7 @@
     <article class="dialog-content">
       <p>Delete all incomplete TODOs?</p>
 
-      <button class="focusable">Confirm</button>
+      <button variant="primary">Confirm</button>
     </article>
   </DialogPopUp>
 </template>
@@ -101,13 +101,6 @@ function addTodo() {
 </script>
 
 <style scoped>
-button {
-  padding: 0.2rem;
-
-  background: var(--color-text);
-  color: var(--color-base);
-}
-
 .button-group {
   display: flex;
   gap: 1rem;
@@ -125,6 +118,7 @@ button {
 input {
   background: var(--color-base);
   padding: var(--spacing-small);
+  width: 100%;
 }
 
 input:focus-visible {

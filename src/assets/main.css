@@ -33,6 +33,22 @@ body {
   gap: var(--spacing-default) var(--spacing-small);
 }
 
+button[variant="primary"] {
+  padding: 0.2rem;
+
+  background: var(--color-text);
+  color: var(--color-base);
+}
+
+a:focus,
+a:hover,
+button:focus,
+button:hover {
+  background: var(--color-primary);
+  color: var(--color-base);
+  outline: none;
+}
+
 .padding--vertical {
   padding-top: var(--spacing-default);
   padding-bottom: var(--spacing-default);
@@ -71,11 +87,4 @@ body {
 .wrapper:focus-within > .legend {
   color: var(--color-primary);
   font-weight: 600;
-}
-
-.focusable:focus,
-.focusable:hover {
-  background: var(--color-primary);
-  color: var(--color-base);
-  outline: none;
 }
