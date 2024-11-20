@@ -2,17 +2,21 @@ import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 
 export const useTodoStore = defineStore("todos", () => {
-  const todos = ref([
-    {
-      label: "Test Task 1",
-      description: "something somehintg oui oui",
-      dateCreated: new Date(),
-      dateScheduled: new Date(),
-    },
-  ]);
+  const todos = ref([]);
 
   function addTodo(todo) {
     this.todos.push(todo);
   }
-  return { todos, addTodo };
+
+  function updateTodo(id, todo) {
+    const index = this.todos.findIndex((element) => element.id === id);
+    this.todos[index] = {
+      ...this.todos.findIndex((element) => element.id === id),
+      ...todo,
+    };
+
+    console.log(this.todos);
+  }
+
+  return { todos, addTodo, updateTodo };
 });

@@ -22,9 +22,9 @@
     </button>
   </div>
 
-  <ul>
+  <ul class="todo-list">
     <li v-for="todo in todoStore.todos" :key="todo.createdDate + todo.label">
-      {{ todo.label }}
+      <TodoItem :todo />
     </li>
   </ul>
 
@@ -69,7 +69,9 @@
 
 <script setup>
 import { ref } from "vue";
+import { datetime, RRule } from "rrule";
 
+import TodoItem from "@/components/TodoItem.vue";
 import DialogPopUp from "@/components/DialogPopUp.vue";
 
 import { useTodoStore } from "@/stores/todos.js";
@@ -84,11 +86,21 @@ const showAddTodoDialog = ref(false);
 const showRemoveAllDialog = ref(false);
 
 function addTodo() {
+  const now = new Date();
+
+  const rule = new RRule({
+    freq: RRule.DAILY,
+    interval: 1,
+    dtstart: datetime(now.getFullYear(), now.getMonth() + 1, now.getDate()),
+    until: datetime(now.getFullYear(), now.getMonth() + 1, now.getDate()),
+  });
+
   todoStore.addTodo({
+    id: crypto.randomUUID(),
     label: newTodo.value.label,
-    description: newTodo.value.label,
-    createdDate: new Date(),
-    lastModifiedDate: new Date(),
+    description: newTodo.value.description,
+    dateCreated: new Date(),
+    dateRule: rule.toString(),
   });
 
   newTodo.value = {
@@ -103,6 +115,12 @@ function addTodo() {
 <style scoped>
 .button-group {
   display: flex;
+  gap: 1rem;
+}
+
+.todo-list {
+  display: grid;
+  margin-top: 1rem;
   gap: 1rem;
 }
 

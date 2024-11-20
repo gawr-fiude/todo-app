@@ -3,6 +3,7 @@
     ref="dialog"
     @keydown.esc="
       () => {
+        // Dialog uses keydown, so this one has to be keydown as well
         $emit('close-modal');
       }
     "
