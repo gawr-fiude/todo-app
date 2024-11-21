@@ -35,10 +35,6 @@ const navLinks = [
     url: "/",
   },
   {
-    label: "Journal",
-    url: "/journal",
-  },
-  {
     label: "Config",
     url: "/config",
   },
