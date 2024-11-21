@@ -5,9 +5,11 @@
   </div>
 
   <ul class="todo-list">
-    <li v-for="todo in todoStore.todos" :key="todo.createdDate + todo.label">
-      <TodoListItem :todo />
-    </li>
+    <TodoListItem
+      v-for="todo in todoStore.todos"
+      :key="todo.createdDate + todo.label"
+      :todo
+    />
   </ul>
 </template>
 
