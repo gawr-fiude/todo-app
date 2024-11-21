@@ -19,8 +19,6 @@ body {
   font-size: 18px;
   color: var(--color-text);
   background: var(--color-base);
-
-  min-height: 100dvh;
 }
 
 #app {

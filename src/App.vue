@@ -1,13 +1,6 @@
-<script setup>
-import { RouterView } from "vue-router";
-
-import NavigationMain from "@/components/NavigationMain.vue";
-import NavigationSocial from "@/components/NavigationSocial.vue";
-</script>
-
 <template>
   <aside>
-    <NavigationMain />
+    <NavigationMain @focus-main="focusMain" />
 
     <article class="wrapper padding--vertical padding--horizontal">
       <h2 class="legend">Summary</h2>
@@ -18,7 +11,11 @@ import NavigationSocial from "@/components/NavigationSocial.vue";
     <NavigationSocial />
   </aside>
 
-  <main class="wrapper padding--vertical padding--horizontal">
+  <main
+    ref="main"
+    tabindex="-1"
+    class="wrapper padding--vertical padding--horizontal"
+  >
     <h2 class="legend">
       {{ new Date().toISOString().split("T")[0] }}
     </h2>
@@ -26,6 +23,20 @@ import NavigationSocial from "@/components/NavigationSocial.vue";
     <RouterView />
   </main>
 </template>
+
+<script setup>
+import { useTemplateRef } from "vue";
+import { RouterView } from "vue-router";
+
+import NavigationMain from "@/components/NavigationMain.vue";
+import NavigationSocial from "@/components/NavigationSocial.vue";
+
+const main = useTemplateRef("main");
+
+function focusMain() {
+  main.value.focus();
+}
+</script>
 
 <style scoped>
 main {
