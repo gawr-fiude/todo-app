@@ -36,7 +36,6 @@
 
 <script setup>
 import { ref } from "vue";
-import { datetime, RRule } from "rrule";
 
 import DialogPopUp from "@/components/DialogPopUp.vue";
 
@@ -51,21 +50,9 @@ const newTodo = ref({
 const showAddTodoDialog = ref(false);
 
 function addTodo() {
-  const now = new Date();
-
-  const rule = new RRule({
-    freq: RRule.DAILY,
-    interval: 1,
-    dtstart: datetime(now.getFullYear(), now.getMonth() + 1, now.getDate()),
-    until: datetime(now.getFullYear(), now.getMonth() + 1, now.getDate()),
-  });
-
   todoStore.addTodo({
-    id: crypto.randomUUID(),
     label: newTodo.value.label,
     description: newTodo.value.description,
-    dateCreated: new Date(),
-    dateRule: rule.toString(),
   });
 
   newTodo.value = {
