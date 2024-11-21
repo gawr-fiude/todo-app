@@ -20,17 +20,16 @@ body {
   color: var(--color-text);
   background: var(--color-base);
 
-  display: grid;
-  place-items: center;
   min-height: 100dvh;
 }
 
 #app {
-  width: min(120ch, 100% - 2rem);
+  width: min(90ch, 100% - 2rem);
+  margin: 3rem auto;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-default) var(--spacing-small);
+  gap: var(--spacing-small);
 }
 
 button[variant="primary"] {

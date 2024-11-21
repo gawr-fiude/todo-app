@@ -6,7 +6,17 @@ import NavigationSocial from "@/components/NavigationSocial.vue";
 </script>
 
 <template>
-  <NavigationMain />
+  <aside>
+    <NavigationMain />
+
+    <article class="wrapper padding--vertical padding--horizontal">
+      <h2 class="legend">Summary</h2>
+
+      <p>Current Tasks: n/N</p>
+    </article>
+
+    <NavigationSocial />
+  </aside>
 
   <main class="wrapper padding--vertical padding--horizontal">
     <h2 class="legend">
@@ -15,24 +25,16 @@ import NavigationSocial from "@/components/NavigationSocial.vue";
 
     <RouterView />
   </main>
-
-  <article class="wrapper padding--vertical padding--horizontal">
-    <h2 class="legend">Summary</h2>
-
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-      dignissimos alias voluptates impedit ab officia! Dignissimos veniam
-      laudantium dolorum quae aliquam ad alias ipsum ex distinctio, debitis ipsa
-      atque minus.
-    </p>
-  </article>
-
-  <NavigationSocial />
 </template>
 
 <style scoped>
 main {
   grid-column: span 3;
-  grid-row: span 3;
+}
+
+aside {
+  display: grid;
+  height: fit-content;
+  gap: var(--spacing-default);
 }
 </style>
