@@ -51,5 +51,9 @@ export const useTodoStore = defineStore("todos", () => {
     this.todos[index] = updatedItem;
   }
 
-  return { todos, addTodo, updateTodo };
+  function removeAll() {
+    this.todos = [];
+  }
+
+  return { todos, addTodo, updateTodo, removeAll };
 });
