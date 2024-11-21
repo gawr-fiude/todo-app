@@ -1,12 +1,12 @@
 <script setup>
 import { RouterView } from "vue-router";
 
-import MainNavigation from "@/components/MainNavigation.vue";
-import SocialNavigation from "@/components/SocialNavigation.vue";
+import NavigationMain from "@/components/NavigationMain.vue";
+import NavigationSocial from "@/components/NavigationSocial.vue";
 </script>
 
 <template>
-  <MainNavigation />
+  <NavigationMain />
 
   <main class="wrapper padding--vertical padding--horizontal">
     <h2 class="legend">
@@ -27,7 +27,7 @@ import SocialNavigation from "@/components/SocialNavigation.vue";
     </p>
   </article>
 
-  <SocialNavigation />
+  <NavigationSocial />
 </template>
 
 <style scoped>
