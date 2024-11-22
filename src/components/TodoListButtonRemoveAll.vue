@@ -2,7 +2,7 @@
   <button
     @click="
       () => {
-        showRemoveAllDialog = true;
+        show = true;
       }
     "
     variant="primary"
@@ -11,14 +11,14 @@
   </button>
 
   <DialogPopUp
-    :show="showRemoveAllDialog"
+    :show
     @close-modal="
       () => {
-        showRemoveAllDialog = false;
+        show = false;
       }
     "
   >
-    <form @submit.prevent="todoStore.removeAll()" class="dialog-content">
+    <form @submit.prevent="removeAll" class="dialog-content">
       <p>Delete all incomplete TODOs?</p>
 
       <button type="submit" variant="primary">Confirm</button>
@@ -34,7 +34,13 @@ import DialogPopUp from "@/components/DialogPopUp.vue";
 import { useTodoStore } from "../stores/todos.js";
 const todoStore = useTodoStore();
 
-const showRemoveAllDialog = ref(false);
+const show = ref(false);
+
+function removeAll() {
+  todoStore.removeAll();
+
+  show.value = false;
+}
 </script>
 
 <style scoped>

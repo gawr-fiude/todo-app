@@ -2,7 +2,7 @@
   <button
     @click="
       () => {
-        showAddTodoDialog = true;
+        show = true;
       }
     "
     variant="primary"
@@ -11,10 +11,10 @@
   </button>
 
   <DialogPopUp
-    :show="showAddTodoDialog"
+    :show
     @close-modal="
       () => {
-        showAddTodoDialog = false;
+        show = false;
       }
     "
   >
@@ -47,7 +47,7 @@ const newTodo = ref({
   description: "",
 });
 
-const showAddTodoDialog = ref(false);
+const show = ref(false);
 
 function addTodo() {
   todoStore.addTodo({
@@ -60,7 +60,7 @@ function addTodo() {
     description: "",
   };
 
-  showAddTodoDialog.value = false;
+  show.value = false;
 }
 </script>
 
