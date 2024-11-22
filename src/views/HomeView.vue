@@ -40,7 +40,14 @@
     </article>
   </DialogPopUp>
 
-  <DialogPopUp :show="showRemove">
+  <DialogPopUp
+    :show="showRemove"
+    @close-modal="
+      () => {
+        showRemove = false;
+      }
+    "
+  >
     <form @submit.prevent="removeTodo" class="dialog-content">
       <p>Delete this TODO?</p>
 
@@ -48,7 +55,14 @@
     </form>
   </DialogPopUp>
 
-  <DialogPopUp :show="showComplete">
+  <DialogPopUp
+    :show="showComplete"
+    @close-modal="
+      () => {
+        showComplete = false;
+      }
+    "
+  >
     <form @submit.prevent="completeTodo" class="dialog-content">
       <p>Complete this TODO?</p>
 

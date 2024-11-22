@@ -1,11 +1,20 @@
 <template>
-  <li class="todo-item" tabindex="0">
+  <li
+    tabindex="0"
+    @keyup.delete="
+      () => {
+        $emit('dialog-remove', todo);
+      }
+    "
+    class="todo-item"
+  >
     <span>
       {{ todo.label }} {{ todo.dateCompleted ? "[completed]" : "" }}
     </span>
 
     <div class="button-group">
       <button
+        v-if="!todo.dateCompleted"
         @click="
           () => {
             $emit('dialog-update', todo);
@@ -28,6 +37,7 @@
       </button>
 
       <button
+        v-if="!todo.dateCompleted"
         @click="
           () => {
             $emit('dialog-complete', todo);
@@ -52,6 +62,8 @@ import CheckIcon from "./icons/CheckIcon.vue";
 const props = defineProps({
   todo: Object,
 });
+
+defineEmits(["dialog-update", "dialog-remove", "dialog-complete"]);
 
 const dateUntil = computed(() => {
   const date = rrulestr(props.todo.dateRule).options.until;
