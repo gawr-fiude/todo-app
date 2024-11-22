@@ -51,9 +51,25 @@ export const useTodoStore = defineStore("todos", () => {
     this.todos[index] = updatedItem;
   }
 
+  function completeTodo(id) {
+    const index = this.todos.findIndex((element) => element.id === id);
+    const updatedItem = {
+      ...this.todos[index],
+      ...{
+        dateCompleted: new Date(),
+      },
+    };
+    this.removeTodo(id);
+    this.todos.push(updatedItem);
+  }
+
+  function removeTodo(id) {
+    this.todos = this.todos.filter((element) => element.id !== id);
+  }
+
   function removeAll() {
     this.todos = [];
   }
 
-  return { todos, addTodo, updateTodo, removeAll };
+  return { todos, addTodo, updateTodo, completeTodo, removeTodo, removeAll };
 });
